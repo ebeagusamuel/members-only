@@ -1,0 +1,6 @@
+<h2>Create a new post</h2>
+
+<%= form_for @post do |f| %>
+  <%= f.text_area :body, placeholder: 'What are your thoughts?' %>
+  <%= f.submit :Post %>
+<% end %>
