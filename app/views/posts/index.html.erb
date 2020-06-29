@@ -3,6 +3,7 @@
 <% @posts.each do |post|%>
   <div>
     <p>
+      <%= post.user.email%>
       <%= post.body%>
     </p>
   </div>
