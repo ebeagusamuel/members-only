@@ -3,18 +3,18 @@
 </div>
 
 <% @posts.each do |post|%>
-  <div class="text-center">
-    <% if user_signed_in?%>
-      <div class="shadow-sm p-3 mb-5 bg-white rounded">
-        <h3>Post made by <%= post.user.username%></h3>
+    <div class="panel panel-primary posts">
+      <% if user_signed_in? %>
+        <div class="panel-heading">
+          <h5><em>Post made by: </em><strong><%= post.user.username %></strong></h5>
+        </div>
+      <%end%>
+      <div class="panel-body h4">
+        <article>
+          <%= post.body %>
+        </article>
+        <small class="date">Date Created: <mark><%= post.created_at %></mark></small>
       </div>
-    <%end%>
-    
-    <div class="shadow-lg p-3 mb-5 bg-white rounded">
-      <p class="card-text">
-        <%= post.body%>
-      </p>
-    </div>
+      
   </div>
 <%end%>
-

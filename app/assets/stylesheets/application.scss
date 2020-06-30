@@ -1,3 +1,12 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.posts {
+  max-width: 50%;
+  margin: 2rem auto;
+  .date {
+    display: block;
+    margin-top: 2rem;
+  }
+}
