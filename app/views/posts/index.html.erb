@@ -3,7 +3,9 @@
 <% @posts.each do |post|%>
   <div>
     <p>
-      <%= post.user.email%>
+    <% if user_signed_in? %>
+      <%= post.user.username %>
+    <% end %>
       <%= post.body%>
     </p>
   </div>
