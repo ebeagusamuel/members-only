@@ -2,11 +2,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.posts {
+.s_button, .date {
+  display: block;
+  margin-top: 2rem;
+}
+
+.posts, .post-form {
   max-width: 50%;
   margin: 2rem auto;
-  .date {
-    display: block;
-    margin-top: 2rem;
-  }
 }

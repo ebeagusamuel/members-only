@@ -1,12 +1,9 @@
 <h2 class="text-center">Create a new post</h2>
 
-<div class="text-center">
-  <%= form_for @post do |f| %>
-    <div class="form-group" style="width: 50%; margin: 0 auto;">  
-      <%= f.text_area :body, placeholder: 'What are your thoughts?', class: "form-control"%>
-      <%= f.submit :Post, class: "form-control btn btn-primary" %>
-    </div>
-    
-  <% end %>
-</div>
-
+<%= form_for @post do |f| %>
+  <div class="form-group post-form">  
+    <%= f.text_area :body, placeholder: 'What are your thoughts?', class: "form-control", rows: "10"%>
+    <%= f.submit :Post, class: "form-control btn btn-primary s_button" %>
+    <%= link_to 'Back', root_path %>
+  </div>
+<% end %>
