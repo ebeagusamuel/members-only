@@ -13,7 +13,7 @@
     <ul class="nav nav-tabs ">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to current_user.username, edit_user_registration_path %>
+          <%= link_to current_user.username, edit_user_registration_path, class: "text-uppercase" %>
         </li>
         <li class="nav-item">
           <%= link_to 'Create Post', new_post_path %>
