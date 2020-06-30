@@ -10,15 +10,33 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-      <%= link_to 'Create Post', new_post_path %>
-    <% else %>
-      <%= link_to 'Sign Up', new_user_registration_path %>
-      <%= link_to 'Login', user_session_path %>
+    <ul class="nav nav-tabs ">
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to current_user.username, edit_user_registration_path %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Create Post', new_post_path %>
+        </li>
+        <li>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to 'Sign Up', new_user_registration_path %>
+        </li>
+        <li>
+          <%= link_to 'Login', user_session_path %>
+        </li>
+      <%end%>
+    </ul>
+    
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
     <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
 
     <%= yield %>
   </body>

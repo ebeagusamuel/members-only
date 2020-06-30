@@ -1,12 +1,20 @@
-<h2>Hello</h2>
+<div>
+  <h1 class="text-center text-primary">Posts</h1>
+</div>
 
 <% @posts.each do |post|%>
-  <div>
-    <p>
-    <% if user_signed_in? %>
-      <%= post.user.username %>
-    <% end %>
-      <%= post.body%>
-    </p>
+  <div class="text-center">
+    <% if user_signed_in?%>
+      <div class="shadow-sm p-3 mb-5 bg-white rounded">
+        <h3>Post made by <%= post.user.username%></h3>
+      </div>
+    <%end%>
+    
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">
+      <p class="card-text">
+        <%= post.body%>
+      </p>
+    </div>
   </div>
 <%end%>
+
