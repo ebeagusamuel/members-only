@@ -8,15 +8,16 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.user.build
+    # @user = User.find(params[:id])
+    @post = current_user.posts.build
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to root_path
     else
-      render :new
+      render :new, notice: 'Post successfully created.'
     end
   end
 end
