@@ -1,0 +1,20 @@
+<div>
+  <h1 class="text-center text-primary">Posts</h1>
+</div>
+
+<% @posts.each do |post|%>
+    <div class="panel panel-primary posts">
+      <% if user_signed_in? %>
+        <div class="panel-heading">
+          <h5><em>Post made by: </em><strong><%= post.user.username %></strong></h5>
+        </div>
+      <%end%>
+      <div class="panel-body h4">
+        <article>
+          <%= post.body %>
+        </article>
+        <small class="date">Date Created: <mark><%= post.created_at %></mark></small>
+      </div>
+      
+  </div>
+<%end%>

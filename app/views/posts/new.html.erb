@@ -1,0 +1,9 @@
+<h2 class="text-center">Create a new post</h2>
+
+<%= form_for @post do |f| %>
+  <div class="form-group post-form">  
+    <%= f.text_area :body, placeholder: 'What are your thoughts?', class: "form-control", rows: "10"%>
+    <%= f.submit :Post, class: "form-control btn btn-primary s_button" %>
+    <%= link_to "Back", :back %>
+  </div>
+<% end %>

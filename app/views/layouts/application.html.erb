@@ -10,6 +10,37 @@
   </head>
 
   <body>
+    <ul class="nav nav-tabs ">
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to current_user.username, edit_user_registration_path, class: "text-uppercase" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Posts', posts_path %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Create Post', new_post_path %>
+        </li>
+        <li>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to 'Sign Up', new_user_registration_path %>
+        </li>
+        <li>
+          <%= link_to 'Login', user_session_path %>
+        </li>
+      <%end%>
+    </ul>
+    
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
